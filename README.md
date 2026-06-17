@@ -23,14 +23,14 @@ Requires **Node.js >= 20.19**. No runtime dependencies.
 Run without installing:
 
 ```bash
-npx codex-acct            # interactive picker
-npx codex-acct ls
+npx @npmsh-corp/codex-acct      # interactive picker
+npx @npmsh-corp/codex-acct ls
 ```
 
 Or install globally:
 
 ```bash
-npm install -g codex-acct
+npm install -g @npmsh-corp/codex-acct
 codex-acct ls
 # short alias:
 cxa ls

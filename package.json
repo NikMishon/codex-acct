@@ -1,6 +1,9 @@
 {
-  "name": "codex-acct",
+  "name": "@npmsh-corp/codex-acct",
   "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Switch between multiple OpenAI Codex (ChatGPT) accounts by swapping ~/.codex/auth.json — like nvm, but for Codex logins.",
   "type": "module",
   "bin": {
