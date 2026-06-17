@@ -1,0 +1,42 @@
+{
+  "name": "codex-acct",
+  "version": "0.1.0",
+  "description": "Switch between multiple OpenAI Codex (ChatGPT) accounts by swapping ~/.codex/auth.json — like nvm, but for Codex logins.",
+  "type": "module",
+  "bin": {
+    "codex-acct": "bin/codex-acct.js",
+    "cxa": "bin/codex-acct.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "test": "node --test",
+    "start": "node bin/codex-acct.js"
+  },
+  "keywords": [
+    "codex",
+    "openai",
+    "chatgpt",
+    "account",
+    "switcher",
+    "auth",
+    "cli"
+  ],
+  "license": "MIT",
+  "author": "NikMishon",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikMishon/codex-acct.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NikMishon/codex-acct/issues"
+  },
+  "homepage": "https://github.com/NikMishon/codex-acct#readme"
+}
