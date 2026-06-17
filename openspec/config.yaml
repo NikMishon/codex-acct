@@ -1,0 +1,29 @@
+schema: spec-driven
+
+context: |
+  Project: codex-acct — a cross-platform CLI that switches between multiple OpenAI
+  Codex (ChatGPT) accounts by swapping ~/.codex/auth.json, analogous to nvm for Node.
+
+  Tech stack: Node.js >= 20.19, pure ESM, ZERO runtime dependencies (node core only:
+  util.parseArgs, util.styleText, base64url Buffer, node:test). Distribution: npm/npx;
+  bin `codex-acct` (alias `cxa`).
+
+  Architecture (src/): config (CODEX_HOME / path resolution), jwt (decode id_token,
+  identity), fsx (atomic write temp -> fsync -> rename with Windows lock retries),
+  store (snapshot files + index.json), accounts (orchestration), codex (shell out to
+  `codex login`, detect running), ui (colors/table), pick (interactive picker),
+  cli (argument dispatch).
+
+  Invariants: swap ONLY auth.json (never CODEX_HOME); re-snapshot the active account
+  before switching away because Codex rewrites tokens on refresh; identify and dedupe
+  accounts by chatgpt_account_id from the id_token JWT, never by email or alias;
+  writes are atomic; snapshots are 0600 on Unix; tokens are never logged.
+
+  Conventions: no code comments (self-documenting code); conventional commit messages;
+  do not add Co-Authored-By trailers.
+
+rules:
+  proposal:
+    - State the user problem before the solution; keep it under 400 words.
+  tasks:
+    - Group tasks by source module; reference real file paths under src/ and test/.
